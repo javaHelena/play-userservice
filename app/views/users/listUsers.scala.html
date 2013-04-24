@@ -1,0 +1,11 @@
+@(users: List[User])
+
+
+<h1>Users</h1>
+
+
+<ul>
+    @users.map { user =>
+        @views.html.users.user(user)
+    }
+</ul>
