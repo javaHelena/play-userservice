@@ -3,5 +3,6 @@ This is your new Play 2.1 application
 
 This is a basic Play application handling users. 
 
-It is used for my own purpose and provides authentication for another simple thin Play application I am using to test various features in Play. 
+It is used for my own purpose and provides authentication for another 
+simple thin Play application I am using to test various features in Play. 
 
