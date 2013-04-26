@@ -1,0 +1,56 @@
+# Users
+
+- &helhje !!models.User
+    username:             helhje
+    emailAddress:         helena@example.com
+    password:             123456
+    firstName:            Helena
+    lastName:             Hjertén
+    dateOfBirth:          123456787
+    streetAddress:        Braxengatan 24
+    zipCode:              17555
+    city:                 Järfälla
+    interests:
+    swedish:              true
+
+- &marand !!models.User
+     username:             marand
+     emailAddress:         maria@example.com
+     password:             123456
+     firstName:            Maria
+     lastName:             Andersson
+     dateOfBirth:          123456787
+     streetAddress:        Viavägen 24
+     zipCode:              12345
+     city:                 Kumla
+     interests:
+     swedish:              true
+
+
+
+- &joheri !!models.User
+    username:             joheri
+    emailAddress:         johan@example.com
+    password:             123456
+    firstName:            Johan
+    lastName:             Ericsson
+    dateOfBirth:          123456787
+    streetAddress:        Mintgatan 24
+    zipCode:              98765
+    city:                 Sundsvall
+    interests:
+    swedish:              true
+
+
+- &karber !!models.User
+    username:             karber
+    emailAddress:         karl@example.com
+    password:             123456
+    firstName:            Karl
+    lastName:             Berglund
+    dateOfBirth:          123456787
+    streetAddress:        Storgatan 12
+    zipCode:              12122
+    city:                 Stockholm
+    interests:
+    swedish:              true
