@@ -65,7 +65,7 @@ public class User extends Model {
     }
 
 
-    public static User findUserByUsername2(String username, String password){
+    public static User findUserByUsername(String username, String password){
         return find.where()
                 .eq("username", username)
                 .eq("password", password)

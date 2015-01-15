@@ -1,8 +1,7 @@
 package controllers;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import models.User;
-import org.codehaus.jackson.JsonNode;
-import org.codehaus.jackson.node.ObjectNode;
 import play.libs.Json;
 import play.mvc.BodyParser;
 import play.mvc.Controller;
@@ -27,7 +26,6 @@ public class Users extends Controller {
     }
 
 
-
     // API ACTIONS:
 
     public static Result authenticateUser(){
@@ -35,12 +33,12 @@ public class Users extends Controller {
         if(json == null) {
             return badRequest("Expecting Json data");
         } else {
-            String username = json.findPath("username").getTextValue();
-            String pwd = json.findPath("password").getTextValue();
+            String username = json.findPath("username").asText();
+            String pwd = json.findPath("password").asText();
             if(username == null) {
                 return badRequest("Missing parameter [username]");
             } else {
-                User user = User.findUserByUsername2(username, pwd);
+                User user = User.findUserByUsername(username, pwd);
                 JsonNode jsonUser = Json.toJson(user);
                 return ok(jsonUser);
             }
@@ -72,7 +70,7 @@ public class Users extends Controller {
     // NOT USED
 
     public static Result showUserAsJson(String username){
-        User user = User.findUserByUsername2(username, "secret");
+        User user = User.findUserByUsername(username, "secret");
         if (user==null) {
             return ok("No user available...");
         } else {
@@ -87,7 +85,7 @@ public class Users extends Controller {
         if (json == null) {
             return badRequest("Expecting Json data");
         } else {
-            String username = json.findPath("usernameF").getTextValue();
+            String username = json.findPath("usernameF").asText();
             if (username == null) {
                 return badRequest("Missing parameter [username]");
             } else {
@@ -97,16 +95,6 @@ public class Users extends Controller {
             }
         }
     }
-
-
-
-
-
-
-
-
-
-
 
 
     @BodyParser.Of(BodyParser.Json.class)
