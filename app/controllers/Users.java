@@ -28,6 +28,11 @@ public class Users extends Controller {
 
     // API ACTIONS:
 
+    /*
+     *  Test with curl:
+     *  curl --header "Content-type: application/json" --request POST --data '{"username":"helhje", "password":"123456"}' http://localhost:9000/api/authenticate
+     */
+    @BodyParser.Of(BodyParser.Json.class)
     public static Result authenticateUser(){
         JsonNode json = request().body().asJson();
         if(json == null) {
